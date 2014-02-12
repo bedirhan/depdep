@@ -10,10 +10,10 @@
 		</include-ip>	
 	</target>
 	<scanning>
-		<thread>6</thread>
+		<thread>5</thread>
 	</scanning>
 	<settings>
-		<max_filesize> 25M </max_filesize>
+		<max_filesize> 10M </max_filesize>
 		<output_file><![CDATA[ /tmp/depdep.result ]]></output_file>
                 <credentials>
                         <username><![CDATA[]]></username>
@@ -33,8 +33,6 @@
 			<include-type>xlsx</include-type>
 			<include-type>docx</include-type>
 			<include-type>pptx</include-type>
-			<exclude-type> htm </exclude-type>
-			<exclude-type> html </exclude-type>
 		</filetype>
 		<filename>
 			<!-- 
