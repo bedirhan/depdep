@@ -52,20 +52,28 @@
 			<!-- 
 				if there are more than one keyword element exist, OR operation will be applied
 			-->		
-			<!--	
-			<keyword case="insensitive" type="regex" description="password including file contents">
-				<![CDATA[ pass ]]>
-			</keyword>
-                        <keyword case="insensitive" type="regex" description="a complex credit card numbers with only numbers">
-                                <![CDATA[(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|6(?:011|5[0-9]{2})[0-9]{12}|(?:2131|1800|35\d{3})\d{11})]]>
+                        <!--
+                                if there are more than one keyword element exist, OR operation will be applied
+                        -->
+                        <keyword case="insensitive" type="plain" description="password including file contents">
+                                <![CDATA[ password ]]>
                         </keyword>
-			-->
-			<keyword case="insensitive" type="regex" description="cell phone numbers">
-				<![CDATA[5\d\d\s?\d\d\d\s?\d\d\d\d]]>
-			</keyword>
-			<keyword case="insensitive" type="regex" description="a very basic credit card numbers with only numbers">
-				<![CDATA[[0-9]{14,16}]]>
-			</keyword>
+                        <keyword case="insensitive" type="regex" description="a visa credit card number">
+                                <![CDATA[([^0-9-]|^)(4[0-9]{3}( |-|)([0-9]{4})( |-|)([0-9]{4})( |-|)([0-9]{4}))([^0-9-]|$)]]>
+                        </keyword>
+                        <keyword case="insensitive" type="regex" description="a master credit card number">
+                                <![CDATA[([^0-9-]|^)(5[0-9]{3}( |-|)([0-9]{4})( |-|)([0-9]{4})( |-|)([0-9]{4}))([^0-9-]|$)]]>
+                        </keyword>
+                        <keyword case="insensitive" type="regex" description="a CVV or PIN">
+                                <![CDATA[([^0-9-]|^)([0-9]{3,4})([^0-9\-]|$)]]>
+                        </keyword>
+                        <keyword case="insensitive" type="regex" description="cell phone numbers">
+                                <![CDATA[5\d\d\s?\d\d\d\s?\d\d\d\d]]>
+                        </keyword>
+                        <keyword case="insensitive" type="regex" description="a very basic credit card number">
+                                <![CDATA[(([0-9]{4}\-){3}[0-9]{4})]]>
+                        </keyword>
+
 		</filecontent>
 	</content>
 </depdep>
